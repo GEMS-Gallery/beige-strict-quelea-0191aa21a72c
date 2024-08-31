@@ -1,0 +1,16 @@
+type Image = 
+ record {
+   category: text;
+   comments: vec text;
+   createdAt: int;
+   id: nat;
+   likes: nat;
+   title: text;
+   url: text;
+ };
+service : {
+  addComment: (nat, text) -> (bool);
+  getImages: () -> (vec Image) query;
+  likeImage: (nat) -> (bool);
+  uploadImage: (text, text, text) -> (nat);
+}
